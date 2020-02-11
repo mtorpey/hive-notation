@@ -12,7 +12,7 @@ game: [WS] (turn WS)* [turn]
 
 turn: INT "." WS move [WS move]
 
-move: ([drop] piece | piece climb piece) [[location "-"] location] [win]
+move: ([drop] piece | piece climb piece) [[location "-"] location] [win] [[WS] comment]
 
 location: piece [neighbour_reference]
 
@@ -40,6 +40,8 @@ drop: "+"
 climb: "x"
 
 win: "#"
+
+comment: "{" [/[^}]+/] "}" | ";" [/[^\n]+/] "\n"
 
 %import common.CNAME
 %import common.ESCAPED_STRING
