@@ -1,10 +1,47 @@
-move: ["+"] [beetle "x"] piece [[location "-"] location]
+file: tags game
+
+tags: [WS] (tag [WS])*
+
+tag: "[" tag_key WS tag_value "]"
+
+tag_key: CNAME
+
+tag_value: ESCAPED_STRING
+
+game: [WS] (turn WS)* [turn]
+
+turn: INT "." WS move [WS move]
+
+move: ([drop] piece | piece climb piece) [[location "-"] location] [win]
 
 location: piece [neighbour_reference]
 
 neighbour_reference: piece ["(" neighbour_reference ")"] [angle]
 
-piece: "Q" | "q" | "G" | "g" | "A" | "a" | "S" | "s" | beetle
-beetle: "B" | "b"
+piece: "Q"   -> black_queen
+      | "q"  -> white_queen
+      | "G"  -> white_grasshopper
+      | "g"  -> black_grasshopper
+      | "A"  -> white_ant
+      | "a"  -> black_ant
+      | "S"  -> white_spider
+      | "s"  -> black_spider
+      | "B"  -> white_beetle
+      | "b"  -> black_beetle
+      | special_piece
 
-angle: "1" | "2" | "3" | "4" | "5"
+?special_piece: "M"  -> white_mosquito
+      | "m"  -> black_mosquito
+
+angle: "1".."5"
+
+drop: "+"
+
+climb: "x"
+
+win: "#"
+
+%import common.CNAME
+%import common.ESCAPED_STRING
+%import common.INT
+%import common.WS

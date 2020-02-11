@@ -1,4 +1,4 @@
-[Event “https://www.youtube.com/watch?v=adSZPyNUzyk”]
+[Event "https://www.youtube.com/watch?v=adSZPyNUzyk"]
 
 1. +G +s
 2. +SGs2 +ssG3

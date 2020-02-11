@@ -3,7 +3,7 @@
 import sys
 from lark import Lark
 
-hive_parser = Lark(open("hive.bnf").read(), start="move")
+hive_parser = Lark(open("hive.bnf").read(), start="file")
 
 
 def game_tree(game_text):
