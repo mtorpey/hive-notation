@@ -34,11 +34,14 @@ class TreeToExplanation(Transformer):
     def turn(self, args):
         num = args[0]
         ply1 = args[1]
-        description = "On turn " + str(num) + ", " + str(ply1)
+        description = "On turn " + str(num) + ", " + ply1
         if len(args) > 2:
             ply2 = args[2]
-            description += ", then " + str(ply2) + "."
+            description += ", then " + ply2 + "."
         return description
+
+    def ply(self, args):
+        return "".join(args)
 
     def move(self, piece):
         (piece,) = piece
@@ -51,6 +54,14 @@ class TreeToExplanation(Transformer):
     def climb(self, piece):
         piece1, piece2 = piece
         return piece1 + " climbs onto " + piece2
+
+    def from_location(self, location):
+        (location,) = location
+        return " from " + location
+
+    def to_location(self, location):
+        (location,) = location
+        return " so that it ends " + location
 
     def location(self, args):
         piece = args[0]
@@ -66,7 +77,7 @@ class TreeToExplanation(Transformer):
             return args[1] + " places clockwise from " + args[0]
         elif len(args) == 3:
             # TODO: handle 2-argument sub-reference well
-            return args[2] + " places clockwise from " + args[0] + " (itself " + args[1] + ")"
+            return args[2] + " places clockwise from " + args[0] + " (the one " + args[1] + ")"
         raise AssertionError("Grammar shouldn't allow this")
 
     white_queen = lambda self, _: "white's queen"
@@ -85,6 +96,12 @@ class TreeToExplanation(Transformer):
     def angle(self, value):
         (value,) = value
         return str(value)
+
+    win = lambda self, _: " and wins the game"
+
+    def comment(self, comment):
+        (comment,) = comment
+        return " (" + comment + ")"
 
 
 
