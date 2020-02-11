@@ -1,0 +1,19 @@
+[Event "https://youtu.be/vNvCU6gwbpU"]
+
+1. +G +s
+2. +QGs2 +bsG2
+3. +AQG4 +qsb1
+4. Aqb3 +aq
+5. +BAq4 aBA3
+6. +BAq2 +aq
+7. BxA aq-QG4
+8. Bqb2 +maQ2
+9. Bb bxB
+10. +MB mQG2
+11. MxA +abq3
+12. +AB ab-Qa1
+13. AqM1{Illegal: gap between aB and m is too small} aB-Q
+14. +ABM1 +gaa(m)2
+15. ABM1-ga3 +gmQ4
+16. AM-gm2 +gbq1
+17. Bs gQ#

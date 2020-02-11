@@ -1,0 +1,16 @@
+[Event "https://youtu.be/cA-UTdz8jck"]
+
+1. +b +G
+2. +sbG2 +QGb2
+3. +qbs1 +AQG3
+4. +aqs1 Aqa2
+5. aQG4 +BAq2
+6. sB +AAB2
+7. +aaQ4 Aqb3
+8. aQG2 BxAs
+9. +gaQ(a2)3 Bxq
+10. gQ +GB
+11. +aaQ(a2)2 +AAA3
+12. sA +BGB2
+13. aQg4 BGA3-b
+14. +gaG3 Bgb1#
