@@ -1,25 +1,35 @@
 file: tags game
 
-tags: [WS] (tag [WS])*
+tags: [_WS] (tag [_WS])*
 
-tag: "[" tag_key WS tag_value "]"
+tag: "[" tag_key _WS tag_value "]"
 
-tag_key: CNAME
+?tag_key: CNAME
 
-tag_value: ESCAPED_STRING
+?tag_value: ESCAPED_STRING
 
-game: [WS] (turn WS)* [turn]
+game: [_WS] (turn _WS)* [turn]
 
-turn: INT "." WS move [WS move]
+turn: INT "." _WS ply [_WS ply]
 
-move: ([drop] piece | piece climb piece) [[location "-"] location] [win] [[WS] comment]
+ply: (drop | move | climb) [[from_location] to_location] [win] [[_WS] comment]
+
+move: piece
+
+drop: "+" piece
+
+climb: piece "x" piece
+
+from_location: location "-"
+
+to_location: location
 
 location: piece [neighbour_reference]
 
 neighbour_reference: piece ["(" neighbour_reference ")"] [angle]
 
-piece: "Q"   -> black_queen
-      | "q"  -> white_queen
+piece: "Q"   -> white_queen
+      | "q"  -> black_queen
       | "G"  -> white_grasshopper
       | "g"  -> black_grasshopper
       | "A"  -> white_ant
@@ -28,16 +38,10 @@ piece: "Q"   -> black_queen
       | "s"  -> black_spider
       | "B"  -> white_beetle
       | "b"  -> black_beetle
-      | special_piece
-
-?special_piece: "M"  -> white_mosquito
+      | "M"  -> white_mosquito
       | "m"  -> black_mosquito
 
 angle: "1".."5"
-
-drop: "+"
-
-climb: "x"
 
 win: "#"
 
@@ -46,4 +50,4 @@ comment: "{" [/[^}]+/] "}" | ";" [/[^\n]+/] "\n"
 %import common.CNAME
 %import common.ESCAPED_STRING
 %import common.INT
-%import common.WS
+%import common.WS  -> _WS
