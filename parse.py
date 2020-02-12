@@ -2,6 +2,7 @@
 
 import sys
 from lark import Lark, Transformer
+from textwrap import fill
 
 hive_parser = Lark(open("hive.bnf").read(), start="file")
 
@@ -38,22 +39,22 @@ class TreeToExplanation(Transformer):
         if len(args) > 2:
             ply2 = args[2]
             description += ", then " + ply2 + "."
-        return description
+        return fill(description)
 
     def ply(self, args):
         return "".join(args)
 
     def move(self, piece):
         (piece,) = piece
-        return piece + " moves"
+        return piece + " moved"
 
     def drop(self, piece):
         (piece,) = piece
-        return piece + " is placed"
+        return piece + " was placed"
 
     def climb(self, piece):
         piece1, piece2 = piece
-        return piece1 + " climbs onto " + piece2
+        return piece1 + " climbed onto " + piece2
 
     def from_location(self, location):
         (location,) = location
@@ -61,7 +62,7 @@ class TreeToExplanation(Transformer):
 
     def to_location(self, location):
         (location,) = location
-        return " so that it ends " + location
+        return " onto the space " + location
 
     def location(self, args):
         piece = args[0]
