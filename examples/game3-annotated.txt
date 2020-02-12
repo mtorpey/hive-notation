@@ -1,0 +1,68 @@
+[Event "https://youtu.be/cA-UTdz8jck"]
+
+1. +b +G
+{On turn 1, black's beetle was dropped, then white's grasshopper was dropped.}
+
+2. +sbG2 +QGb2
+{On turn 2, black's spider was dropped to be next to black's beetle, 2 places
+clockwise from white's grasshopper, then white's queen was dropped to be next to
+white's grasshopper, 2 places clockwise from black's beetle.}
+
+3. +qbs1 +AQG3
+{On turn 3, black's queen was dropped to be next to black's beetle, 1 places
+clockwise from black's spider, then white's ant was dropped to be next to
+white's queen, 3 places clockwise from white's grasshopper.}
+
+4. +aqs1 Aqa2
+{On turn 4, black's ant was dropped to be next to black's queen, 1 places
+clockwise from black's spider, then white's ant moved to be next to black's
+queen, 2 places clockwise from black's ant.}
+
+5. aQG4 +BAq2
+{On turn 5, black's ant moved to be next to white's queen, 4 places clockwise
+from white's grasshopper, then white's beetle was dropped to be next to white's
+ant, 2 places clockwise from black's queen.}
+
+6. sB +AAB2
+{On turn 6, black's spider moved to be next to white's beetle, then white's ant
+was dropped to be next to white's ant, 2 places clockwise from white's beetle.}
+
+7. +aaQ4 Aqb3
+{On turn 7, black's ant was dropped to be next to black's ant, 4 places
+clockwise from white's queen, then white's ant moved to be next to black's
+queen, 3 places clockwise from black's beetle.}
+
+8. aQG2 BxAs
+{On turn 8, black's ant moved to be next to white's queen, 2 places clockwise
+from white's grasshopper, then white's beetle climbed onto white's ant to be
+next to black's spider.}
+
+9. +gaQ(a2)3 Bxq
+{On turn 9, black's grasshopper was dropped to be next to black's ant (the one
+next to white's queen, 2 places clockwise from black's ant) 3 places clockwise
+from white's queen, then white's beetle climbed onto black's queen.}
+
+10. gQ +GB
+{On turn 10, black's grasshopper moved to be next to white's queen, then white's
+grasshopper was dropped to be next to white's beetle.}
+
+11. +aaQ(a2)2 +AAA3
+{On turn 11, black's ant was dropped to be next to black's ant (the one next to
+white's queen, 2 places clockwise from black's ant) 2 places clockwise from
+white's queen, then white's ant was dropped to be next to white's ant, 3 places
+clockwise from white's ant.}
+
+12. sA +BGB2
+{On turn 12, black's spider moved to be next to white's ant, then white's beetle
+was dropped to be next to white's grasshopper, 2 places clockwise from white's
+beetle.}
+
+13. aa-Qg4 BGA3-b
+{On turn 13, black's ant moved to be next to white's queen, 4 places clockwise
+from black's grasshopper, then white's beetle moved from next to white's
+grasshopper, 3 places clockwise from white's ant to be next to black's beetle.}
+
+14. +gaG3 Bgb1#
+{On turn 14, black's grasshopper was dropped to be next to black's ant, 3 places
+clockwise from white's grasshopper, then white's beetle moved to be next to
+black's grasshopper, 1 places clockwise from black's beetle and won the game.}
