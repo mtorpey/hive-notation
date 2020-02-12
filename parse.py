@@ -20,7 +20,7 @@ def print_game_tree(game_text):
 class TreeToExplanation(Transformer):
     def file(self, tags_and_game):
         tags, game = tags_and_game
-        return "GAME EXPLANATION\n\n" + tags + "\n\n" + game
+        return "GAME REPORT\n\n" + tags + "\n\n" + game
 
     def tags(self, tags):
         return "This game had the following tags:\n" + "\n".join(tags)
@@ -50,7 +50,7 @@ class TreeToExplanation(Transformer):
 
     def drop(self, piece):
         (piece,) = piece
-        return piece + " was placed"
+        return piece + " was dropped"
 
     def climb(self, piece):
         piece1, piece2 = piece
@@ -62,23 +62,22 @@ class TreeToExplanation(Transformer):
 
     def to_location(self, location):
         (location,) = location
-        return " onto the space " + location
+        return " to be " + location
 
     def location(self, args):
         piece = args[0]
         description = "next to " + piece
         if len(args) == 2:
-           description += ", " + args[1]
+           description += args[1]
         return description
 
     def neighbour_reference(self, args):
         if len(args) == 1:
-            return "next to " + args[0]
+            return " next to " + args[0]
         elif len(args) == 2:
-            return args[1] + " places clockwise from " + args[0]
+            return ", " + args[1] + " places clockwise from " + args[0]
         elif len(args) == 3:
-            # TODO: handle 2-argument sub-reference well
-            return args[2] + " places clockwise from " + args[0] + " (the one " + args[1] + ")"
+            return " (the one next to " + args[0] + args[1] + ") " + args[2] + " places clockwise from " + args[0]
         raise AssertionError("Grammar shouldn't allow this")
 
     white_queen = lambda self, _: "white's queen"
@@ -98,7 +97,7 @@ class TreeToExplanation(Transformer):
         (value,) = value
         return str(value)
 
-    win = lambda self, _: " and wins the game"
+    win = lambda self, _: " and won the game"
 
     def comment(self, comment):
         (comment,) = comment
