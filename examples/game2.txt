@@ -1,4 +1,5 @@
 [Event "https://youtu.be/vNvCU6gwbpU"]
+[ExpansionPieces "Mm"]
 
 1. +G +s
 2. +QGs2 +bsG2
