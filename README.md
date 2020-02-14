@@ -167,7 +167,10 @@ and a double quote-delimited string for its value.  For example:
 
 There are no mandatory tags, but see
 [PGN tag pairs](https://en.wikipedia.org/wiki/Portable_Game_Notation#Tag_pairs)
-for common examples.
+for common examples.  If playing with an expansion, you should specify an
+`ExpansionPieces` tag with the symbols of all expansion pieces in play:
+
+    [ExpansionPieces "Mm"]
 
 
 
