@@ -1,0 +1,15 @@
+[Event "https://youtu.be/HMwPYOPijd0?t=1680"]
+
+1. +a +S
+2. +baS2 +ASa2
+3. +sab2 +GSA1
+4. +qba3 +QGA2
+5. +ga +gqg3
+6. +sba2 Abq1
+7. sq-Q G
+8. gQ +BA
+9. sQ +AGB3
+10. +gsG4 Aqb1  ; Time 45:11
+11. +bsg5 Gq
+12. bQ +SGA1
+13. gQ#

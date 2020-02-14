@@ -1,0 +1,22 @@
+[Event "https://youtu.be/HMwPYOPijd0?t=2994"]
+
+1. +b +S
+2. +sbS4 +ASb4
+3. +abS2 +SAS4
+4. +qsb2 +QSA3
+5. aQS3 +GSb3
+6. +sAQ3 Gq
+7. sQS1 +AG
+8. +bsS3 AG-qG4
+9. +aaQ3 +BQ
+10. aQa1 Bxa
+11. +aaQ3 Abs(Q)4
+12. aQ +GSb3
+13. +gbA4 Agb3
+14. aS-Q GQG1
+15. +gab1 Aga3
+16. aQ Agb(s2)3
+17. sq-A Gs
+18. as-Qs2 +BGq
+19. +ggb2 BqG1
+20. gQ#
