@@ -55,7 +55,6 @@ for humans to learn and use**.
 
 Description
 -----------
-
 Here we will describe how the notation works.  The quickest way to understand it
 is to see it in action with an explanation: have a look at
 `examples/game3-annotated.txt`.  But if you want a full explanation, read on.
@@ -83,7 +82,8 @@ The symbols have the following meaning:
   hyphen to separate it from `to_location`.  This may be required if there are
   two pieces of the same type that could legally move to the `to_location`
   indicated.
-- `#` means that this move ends the game, resulting in a win for either player.
+- `#` means that this move ends the game.  The result may be a win, loss, or
+  draw for the active player.
 
 Locations are phrased in terms of neighbouring pieces and angles.  A location
 has the following form:
@@ -95,11 +95,11 @@ has the following form:
 that this location sits from `another_piece`.  This is a lot easier to
 understand when you see examples.
 
-Here are some examples:
+Here are some examples of moves:
 - `g` -- Black's grasshopper moves.
 - `BxA` -- White's beetle climbs onto white's ant.
 - `+QGs2` -- White places his queen next to white's grasshopper, 2 places
-  clockwise from where black's spider borders it.
+  clockwise around it from black's spider.
 - `ABs1-ga3#` -- White's ant (the one currently next to white's beetle, 1 place
   clockwise around it from black's spider) moves next to black's grasshopper, 3
   places clockwise around it from black's ant.  This ends the game!
@@ -124,12 +124,69 @@ explaining further.  For example:
   clockwise from white's queen.  (White's queen is next to black's spider, and
   the black ant in question is two places round clockwise from the spider).
 
+These extra brackets are rarely needed -- perhaps once or twice per game.
+
 ### The whole game
 
+A "turn" consists of two *moves*: one by the first player, one by the second
+player.  When recording a whole game, these turns should be numbered starting
+from 1, and the turn number followed by a dot should precede each move, as in
+the following example.
+
+    1. +G +s 2. +SGs2 +ssG3 3. +QGS1 +ass2 4. Ss +qsG2 5. +SGQ1 +gqs2
+
+This continues until the game ends.  Additional whitespace can be inserted
+anywhere, and for clarity you may wish to put each turn on a new line.  As in
+PGN, a maximum line length of 80 characters is recommended.
+
+### Files
+
+You can use fragments of this notation to describe particular moves or games, on
+paper, in online posts, or anywhere you want to record part of a Hive game.
+However, you can also store a game as a full file, with the extension `.txt` or
+`.hive`.  This is often done in `.pgn` files for chess.  If you make such a
+file, you can include comments and tags as follows.
+
+### Comments
+
+Single-line comments can be included after a semi-colon `;`, and multi-line
+comments can be included inside curly braces `{}` (just like PGN).  Don't use
+round brackets to indicate alternative moves, since these are reserved for
+locations as described above.
+
 ### Tags
+
+Just like a PGN file in chess, you can start a Hive game file with any number of
+*tag pairs*, giving information about the event, date, time, names of
+participants, or anything else you wish to include.  A tag consists of a name
+and a double quote-delimited string for its value.  For example:
+
+    [Event "Hive Society round-robin final"]
+    [Site "St Andrews, Scotland"]
+    [Date "2020-02-14"]
+
+There are no mandatory tags, but see
+[PGN tag pairs](https://en.wikipedia.org/wiki/Portable_Game_Notation#Tag_pairs)
+for common examples.
+
+
 
 Examples
 --------
 See the `examples/` directory for several real games set down in this notation.
-See `examples/game3-annotated.txt` for a game with full running explanation in
-English.
+Especially see `examples/game3-annotated.txt` for a game with a full running
+explanation in English.
+
+
+
+Tools in this repo
+------------------
+This directory contains a program `parse.py` that can be used to turn a file in
+Hive notation into a verbose English description of the game.  Call it as
+follows:
+
+    ./parse.py examples/game2.txt
+
+You can also use it as part of a bash pipeline:
+
+    cat examples/game2.txt | ./parse.py > english-description.txt
