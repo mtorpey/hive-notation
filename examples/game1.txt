@@ -12,9 +12,9 @@
 10. BxS aQA1
 11. Qa +abs5  {08:02}
 12. Bxg aQa3
-13. Bxq +gbs1
-14. SQ gQ
-15. QaS aQa2  {11:18}
+13. Bxq +gbs1  ; MT: here!
+14. SQ gQ  ; And here!
+15. QaS aQg3  {11:18}
 16. BxgS +gbs1
 17. Ags2 +baQ4
 18. BQ aQa2
@@ -23,5 +23,5 @@
 21. Ags1 gQ
 22. +AAB2 gbs3
 23. AA-BA4 bxs
-24. +GB agQ4-AB(s2)2
+24. +GB agQ4-AB(s2)2  ; And here
 25. Bq#
